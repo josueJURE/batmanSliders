@@ -1,0 +1,25 @@
+.carousel {
+  position: relative;
+  display: flex;
+
+}
+
+.carousel_Image {
+  height: 500px;
+  width: 500px;
+  position: absolute;
+
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.buttonSection {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  bottom: 0px;
+}
