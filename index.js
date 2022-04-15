@@ -2,37 +2,35 @@ const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const images = Array.from(document.querySelectorAll(".carousel_Image"));
 let counter = 0;
-console.log(images[counter])
 
+nextBtn.addEventListener("click", moveNext);
+prevBtn.addEventListener("click", moveToPrevious);
 
-
-nextBtn.addEventListener("click", function() {
-  if(counter < images.length) {
-    images.forEach(image => {
-      image.classList.add("hide");
-    })
-    if(counter === -1) {
-      counter = counter + 1;
-      images[counter].classList.remove("hide");
-    } else {
-      images[counter].classList.remove("hide");
-    }
-    counter++;
-    counter -1
-    console.log(counter)
+function moveNext() {
+  if(counter === images.length -1) {
+    counter = 0;
+  } else {
+    counter++
   }
-})
+  update()
+}
 
-prevBtn.addEventListener("click", function() {
-  if(counter < 0) return
+
+
+function moveToPrevious() {
+  if(counter === 0) {
+    counter = images.length -1
+  } else {
+    counter--;
+  }
+  update()
+}
+
+function update() {
   images.forEach(image => {
     image.classList.add("hide");
-
-    if(counter === 3) {
-      counter = counter -1
-      images[counter].classList.remove("hide")
-    } else {
-      images[counter].classList.remove("hide");
-    }
   })
-})
+  images[counter].classList.add("show")
+}
+
+update()
