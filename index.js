@@ -1,5 +1,6 @@
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
+const content = document.querySelector(".content");
 const images = Array.from(document.querySelectorAll(".carousel_Image"));
 let counter = 0;
 
@@ -52,7 +53,13 @@ function update() {
     image.classList.remove("show")
     image.classList.add("hide");
   })
-  images[counter].classList.add("show")
+  images[counter].classList.add("show");
+  updateContent();
 }
 
-update()
+
+function updateContent() {
+  content.innerHTML = batman[counter].name;
+}
+
+// update()
