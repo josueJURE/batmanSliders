@@ -1,6 +1,9 @@
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const content = document.querySelector(".content");
+const name = document.querySelector(".name");
+const year = document.querySelector(".year");
+const boxOffice = document.querySelector(".boxOffice");
 const images = Array.from(document.querySelectorAll(".carousel_Image"));
 let counter = 0;
 
@@ -37,8 +40,6 @@ function moveNext() {
   update()
 }
 
-
-
 function moveToPrevious() {
   if(counter === 0) {
     counter = images.length -1
@@ -54,12 +55,14 @@ function update() {
     image.classList.add("hide");
   })
   images[counter].classList.add("show");
-  updateContent();
+  updateContent(name, year, boxOffice);
 }
 
 
-function updateContent() {
-  content.innerHTML = batman[counter].name;
+function updateContent(param1, param2, param3) {
+  param1.innerHTML = `Played by ${batman[counter].name}`;
+  param2.innerHTML = `released in ${batman[counter].year}`
+  param3.innerHTML = `boxOffice ${batman[counter].boxOffice}`
 }
 
 // update()
