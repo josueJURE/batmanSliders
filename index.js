@@ -9,6 +9,7 @@ prevBtn.addEventListener("click", moveToPrevious);
 function moveNext() {
   if(counter === images.length -1) {
     counter = 0;
+    current++;
   } else {
     counter++
   }
@@ -28,6 +29,7 @@ function moveToPrevious() {
 
 function update() {
   images.forEach(image => {
+    image.classList.remove("show")
     image.classList.add("hide");
   })
   images[counter].classList.add("show")
