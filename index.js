@@ -9,7 +9,7 @@ prevBtn.addEventListener("click", moveToPrevious);
 function moveNext() {
   if(counter === images.length -1) {
     counter = 0;
-    current++;
+    counter++;
   } else {
     counter++
   }
